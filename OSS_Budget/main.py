@@ -10,6 +10,8 @@ def main():
         print("2. 지출 목록 보기")
         print("3. 총 지출 보기")
         print("4. 종료")
+        print("5. 자산 설정")
+        print("6. 잔액 확인")
         choice = input("선택 > ")
 
         if choice == "1":
@@ -31,6 +33,16 @@ def main():
         elif choice == "4":
             print("가계부를 종료합니다.")
             break
+
+        elif choice == "5":
+            try:
+                asset = int(input("현재 자산 금액(원): "))
+                budget.set_asset(asset)
+            except ValueError:
+                print("잘못된 금액입니다.\n")
+        
+        elif choice == "6":
+            budget.show_balance()
 
         else:
             print("잘못된 선택입니다.\n")
