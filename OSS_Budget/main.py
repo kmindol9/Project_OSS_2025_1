@@ -1,5 +1,18 @@
 from budget import Budget
 
+PASSWORD = "0613"
+
+def check_password():
+    for _ in range(3):
+        pw = input("비밀번호를 입력하세요: ")
+        if pw == PASSWORD:
+            print("성공적으로 인증이 완료되었습니다.\n")
+            return True
+        else:
+            print("비밀번호가 틀렸습니다.")
+    print("비밀번호 3회 입력 실패. 프로그램이 종료됩니다.")
+    return False
+
 
 def main():
     budget = Budget()
@@ -37,4 +50,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if check_password():
+        main()
