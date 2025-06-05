@@ -20,7 +20,8 @@ def main():
             except ValueError:
                 print("잘못된 금액입니다.\n")
                 continue
-            budget.add_expense(category, description, amount)
+            memo = input("메모 (선택 사항): ")
+            budget.add_expense(category, description, amount, memo)
 
         elif choice == "2":
             budget.list_expenses()
